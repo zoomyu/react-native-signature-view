@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8465185E1ED3DBEF00D75695 /* RCTSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465185D1ED3DBEF00D75695 /* RCTSignatureView.m */; };
-		8465185F1ED3DBEF00D75695 /* RCTSignatureView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8465185C1ED3DBEF00D75695 /* RCTSignatureView.h */; };
+		8493395F1ED6C07200E76119 /* RCTBaseSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8493395C1ED6C07200E76119 /* RCTBaseSignatureView.m */; };
+		849339601ED6C07200E76119 /* RCTSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8493395E1ED6C07200E76119 /* RCTSignatureView.m */; };
+		849339631ED6C07A00E76119 /* RCTSignatureViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 849339621ED6C07A00E76119 /* RCTSignatureViewManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,7 +19,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				8465185F1ED3DBEF00D75695 /* RCTSignatureView.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -26,8 +26,12 @@
 
 /* Begin PBXFileReference section */
 		846518591ED3DBEF00D75695 /* libRCTSignatureView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTSignatureView.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8465185C1ED3DBEF00D75695 /* RCTSignatureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTSignatureView.h; sourceTree = "<group>"; };
-		8465185D1ED3DBEF00D75695 /* RCTSignatureView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTSignatureView.m; sourceTree = "<group>"; };
+		8493395B1ED6C07200E76119 /* RCTBaseSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTBaseSignatureView.h; sourceTree = "<group>"; };
+		8493395C1ED6C07200E76119 /* RCTBaseSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTBaseSignatureView.m; sourceTree = "<group>"; };
+		8493395D1ED6C07200E76119 /* RCTSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTSignatureView.h; sourceTree = "<group>"; };
+		8493395E1ED6C07200E76119 /* RCTSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTSignatureView.m; sourceTree = "<group>"; };
+		849339611ED6C07A00E76119 /* RCTSignatureViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTSignatureViewManager.h; sourceTree = "<group>"; };
+		849339621ED6C07A00E76119 /* RCTSignatureViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTSignatureViewManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +48,7 @@
 		846518501ED3DBEF00D75695 = {
 			isa = PBXGroup;
 			children = (
-				8465185B1ED3DBEF00D75695 /* RCTSignatureView */,
+				849339651ED6C1CC00E76119 /* RCTSignatureView */,
 				8465185A1ED3DBEF00D75695 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,13 +61,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8465185B1ED3DBEF00D75695 /* RCTSignatureView */ = {
+		849339651ED6C1CC00E76119 /* RCTSignatureView */ = {
 			isa = PBXGroup;
 			children = (
-				8465185C1ED3DBEF00D75695 /* RCTSignatureView.h */,
-				8465185D1ED3DBEF00D75695 /* RCTSignatureView.m */,
+				849339611ED6C07A00E76119 /* RCTSignatureViewManager.h */,
+				849339621ED6C07A00E76119 /* RCTSignatureViewManager.m */,
+				8493395B1ED6C07200E76119 /* RCTBaseSignatureView.h */,
+				8493395C1ED6C07200E76119 /* RCTBaseSignatureView.m */,
+				8493395D1ED6C07200E76119 /* RCTSignatureView.h */,
+				8493395E1ED6C07200E76119 /* RCTSignatureView.m */,
 			);
-			path = RCTSignatureView;
+			name = RCTSignatureView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +132,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8465185E1ED3DBEF00D75695 /* RCTSignatureView.m in Sources */,
+				8493395F1ED6C07200E76119 /* RCTBaseSignatureView.m in Sources */,
+				849339601ED6C07200E76119 /* RCTSignatureView.m in Sources */,
+				849339631ED6C07A00E76119 /* RCTSignatureViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +270,7 @@
 				846518641ED3DBEF00D75695 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

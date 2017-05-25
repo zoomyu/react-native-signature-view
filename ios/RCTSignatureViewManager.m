@@ -51,15 +51,14 @@ RCT_EXPORT_METHOD(resetSignature:(nonnull NSNumber *)reactTag) {
     [self.bridge.eventDispatcher
      sendDeviceEventWithName:@"onSaveEvent"
      body:@{
-            @"pathName": aTempPath,
-            @"encoded": aEncoded
+            @"savePath": aTempPath
             }];
 }
-
 -(void) publishDraggedEvent {
     [self.bridge.eventDispatcher
      sendDeviceEventWithName:@"onDragEvent"
      body:@{@"dragged": @YES}];
 }
+
 
 @end

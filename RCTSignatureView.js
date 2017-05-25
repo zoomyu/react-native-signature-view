@@ -64,13 +64,12 @@ class SignatureView extends React.Component {
   }
 
   _onChange(event) {
-    if(event.nativeEvent.pathName){
+    if(event.nativeEvent.savePath){
       if (!this.props.onSaveEvent) {
         return;
       }
       this.props.onSaveEvent({
-        pathName: event.nativeEvent.pathName,
-        encoded: event.nativeEvent.encoded,
+        savePath: event.nativeEvent.savePath
       });
     }
   }

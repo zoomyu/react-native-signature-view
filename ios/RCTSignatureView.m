@@ -95,8 +95,13 @@
 
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths firstObject];
-    NSString *tempPath = [documentsDirectory stringByAppendingFormat:@"/signature.png"];
-    NSLog(@"tempPath:%@",tempPath);
+
+    NSDate *today = [NSDate date];
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    NSInteger interval = [zone secondsFromGMTForDate:today];
+    NSDate *localeDate = [today dateByAddingTimeInterval:interval];
+    NSString *timeSp = [NSString stringWithFormat:@"%ld",(long)[localeDate timeIntervalSince1970]];
+    NSString *tempPath = [documentsDirectory stringByAppendingFormat:@"/signature_%@.png",timeSp];
 
     if ([[NSFileManager defaultManager] fileExistsAtPath:tempPath]) {
         [[NSFileManager defaultManager] removeItemAtPath:tempPath error:&error];
@@ -274,7 +279,6 @@
     return str;
 }
 - (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha{
-    //删除字符串中的空格
     NSString *cString = [[color stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     // String should be 6 or 8 characters
     if ([cString length] < 6){
