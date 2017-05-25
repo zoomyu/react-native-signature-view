@@ -1,0 +1,5 @@
+rootProject.name = 'example'
+include ':react-native-signature-view'
+project(':react-native-signature-view').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-signature-view/android')
+
+include ':app'
