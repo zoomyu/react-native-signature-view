@@ -165,6 +165,7 @@
         [backImgView addSubview:disPlayView];
         //        backImgView.backgroundColor = backColor;
     }
+    disPlayView.backgroundColor = [UIColor whiteColor];
     CGRect rect = CGRectMake(0, self.bounds.size.height, self.bounds.size.width, self.bounds.size.height);
     waterBackGroud = [self shotScreen:contentView Rect:rect];
     backImgView.clipsToBounds = YES;
