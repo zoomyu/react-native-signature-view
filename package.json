@@ -1,0 +1,25 @@
+{
+  "name": "react-native-signature-view",
+  "version": "0.3.2",
+  "description": "A react-native component for signing.",
+  "main": "RCTSignatureView.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoomyu/react-native-signature-view.git"
+  },
+  "keywords": [
+    "react-native",
+    "signature",
+    "autograph",
+    "sign"
+  ],
+  "author": "zoomyu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zoomyu/react-native-signature-view/issues"
+  },
+  "homepage": "https://github.com/zoomyu/react-native-signature-view#readme"
+}
