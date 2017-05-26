@@ -1,0 +1,39 @@
+language: node_js
+
+#sudo: required
+
+node_js:
+  - "6.9.1"
+
+env:
+  - CXX=g++-4.8
+
+before_cache:
+- rm -rf android/.gradle/caches
+- rm -rf node_modules
+
+cache:
+  directories:
+    - node_modules
+    - android/.gradle/caches
+    - android/.gradle/wrapper
+
+before_install:
+  - npm install -g react-native-cli
+  #- rm -rf SignatureViewDemo
+
+notifications:
+  email: false
+
+branches:
+  only:
+  - master
+
+script:
+  - react-native init SignatureViewDemo
+  - cd SignatureViewDemo
+  - npm install react-native-signature-view --save
+  # - react-native link
+
+after_script:
+  - npm uninstall react-native-signature-view --save
