@@ -93,8 +93,10 @@ public class RCTSigntureView extends ImageView implements View.OnTouchListener {
 
         if (watermarkString != null && watermarkString.trim() != "") {
             float fontPixels = watermarkSize * getResources().getDisplayMetrics().scaledDensity;
-            this.setBackground(new WatermarkDrawable(width, height, watermarkString, lineSpacing,
-                    wordSpacing, watermarkAngle, fontPixels, watermarkColor));
+            int linePixels = (int) (lineSpacing * getResources().getDisplayMetrics().scaledDensity);
+            int wordPixels = (int) (wordSpacing * getResources().getDisplayMetrics().scaledDensity);
+            this.setBackground(new WatermarkDrawable(width, height, watermarkString, linePixels,
+                    wordPixels, watermarkAngle, fontPixels, watermarkColor));
         }
 
         setMeasuredDimension(width, height);
