@@ -1,6 +1,6 @@
 {
   "name": "react-native-signature-view",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "A react-native component for signing.",
   "main": "RCTSignatureView.js",
   "scripts": {
