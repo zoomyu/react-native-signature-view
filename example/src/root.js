@@ -17,12 +17,12 @@ export default class Root extends Component {
       watermarkSize: 14,
       watermarkColor: '#888888',
       signatureColor: '#000000',
-      watermarkLineSpacing: 100,
-      watermarkWordSpacing: 80,
+      watermarkLineSpacing: 20,
+      watermarkWordSpacing: 10,
       watermarkAngle: 45,
     };
   }
-  
+
   render() {
     return (
       <View style={styles.container}>

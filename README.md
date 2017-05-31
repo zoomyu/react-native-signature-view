@@ -7,6 +7,8 @@
 
  SignatureView component for React Native (Android and iOS)
 
+ ![Android](docs/gifs/android.gif)   ![iOS](docs/gifs/ios.gif)
+
 ### Getting Started
 
 `npm i --save react-native-signature-view`
