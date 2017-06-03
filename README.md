@@ -7,7 +7,10 @@
 
  SignatureView component for React Native (Android and iOS)
 
- ![Android](docs/gifs/android.gif)   ![iOS](docs/gifs/ios.gif)
+<p >
+  <img src="docs/gifs/android.gif" height="450">
+  <img src="docs/gifs/ios.gif" height="450">
+</p>
 
 ### Getting Started
 
@@ -103,3 +106,7 @@ To see all available function take a look at [root.js](https://github.com/zoomyu
     }}
   />
 ```
+
+### License
+
+[MIT](./LICENSE)
