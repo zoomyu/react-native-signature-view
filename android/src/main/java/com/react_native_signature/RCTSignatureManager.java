@@ -1,6 +1,5 @@
 package com.react_native_signature;
 
-import android.content.Context;
 import android.support.annotation.Nullable;
 
 import com.facebook.infer.annotation.Assertions;
@@ -19,7 +18,6 @@ import java.util.Map;
 
 public class RCTSignatureManager extends SimpleViewManager<RCTSigntureView> {
     public static final String REACT_CLASS = "RCTSignatureView";
-    private Context mContext;
 
     public static final int COMMAND_SAVE_SIGNATURE = 0x01;
     public static final int COMMAND_RESET_SIGNATURE = 0x02;
@@ -31,7 +29,6 @@ public class RCTSignatureManager extends SimpleViewManager<RCTSigntureView> {
 
     @Override
     protected RCTSigntureView createViewInstance(ThemedReactContext reactContext) {
-        this.mContext = reactContext;
         return new RCTSigntureView(reactContext);
     }
 

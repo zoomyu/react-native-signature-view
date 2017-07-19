@@ -44,27 +44,27 @@ public class WatermarkDrawable extends Drawable{
         Paint.FontMetrics fontMetrics= mPaint.getFontMetrics();
         mWatermarkHeight = (int) (-fontMetrics.ascent+fontMetrics.descent); //水印字体高度
         mWatermarkWidth = (int) mPaint.measureText(watermarkString); //水印字体宽度
-        watermarkAngle = watermarkAngle%360>=0 ?  watermarkAngle%360 : watermarkAngle%360+360;
-        double radian = Math.PI*watermarkAngle/180;
+        int angle = watermarkAngle%360>=0 ?  watermarkAngle%360 : watermarkAngle%360+360;
+        double radian = Math.PI*angle/180;
         int dh = lineSpacing + mWatermarkHeight;
         int dw = wordSpacing + mWatermarkWidth;
 
-        if (watermarkAngle > 270) {
+        if (angle > 270) {
             top = -dh;
             bottom = (int) (height*Math.cos(radian) - width*Math.sin(radian)) + dh;
             left = (int) (height*Math.sin(radian)) - dw;
             right = (int) (width*Math.cos(radian)) + dw;
-        } else if (watermarkAngle > 180) {
+        } else if (angle > 180) {
             top = (int) (height*Math.cos(radian)) - dh;
             bottom = (int) (-width*Math.sin(radian)) + dh;
             left = (int) (height*Math.sin(radian) + width*Math.cos(radian)) - dw;
             right = dw;
-        } else if (watermarkAngle > 90) {
+        } else if (angle > 90) {
             top = (int) (height*Math.cos(radian) - width*Math.sin(radian)) - dh;
             bottom = dh;
             left = (int) (width*Math.cos(radian)) - dw;
             right = (int) (height*Math.sin(radian)) + dw;
-        } else if (watermarkAngle >= 0) {
+        } else if (angle >= 0) {
             top = (int) (-width*Math.sin(radian)) - dh ;
             bottom = (int) (height*Math.cos(radian)) + dh ;
             left = -dw;

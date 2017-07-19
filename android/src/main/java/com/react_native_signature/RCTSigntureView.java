@@ -9,6 +9,7 @@ import android.graphics.Path;
 
 
 import android.os.Environment;
+import android.text.TextUtils;
 import android.util.Pair;
 import android.view.MotionEvent;
 import android.view.View;
@@ -57,14 +58,12 @@ public class RCTSigntureView extends ImageView implements View.OnTouchListener {
 
     private ArrayList<Pair<Path, Paint>> paths = new ArrayList<>();
     private ArrayList<Pair<Path, Paint>> undonePaths = new ArrayList<>();
-    private Context mContext;
 
     private Bitmap bitmap;
     private int mode = STROKE;
 
     public RCTSigntureView(Context context) {
         super(context);
-        this.mContext = context;
         setFocusable(true);
         setFocusableInTouchMode(true);
         setBackgroundColor(Color.WHITE);
@@ -80,7 +79,7 @@ public class RCTSigntureView extends ImageView implements View.OnTouchListener {
 
         m_Path = new Path();
 
-        setLayoutParams(new android.view.ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+        setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
         invalidate();
     }
@@ -91,7 +90,7 @@ public class RCTSigntureView extends ImageView implements View.OnTouchListener {
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
 
-        if (watermarkString != null && watermarkString.trim() != "") {
+        if (!TextUtils.isEmpty(watermarkString)) {
             float fontPixels = watermarkSize * getResources().getDisplayMetrics().scaledDensity;
             int linePixels = (int) (lineSpacing * getResources().getDisplayMetrics().scaledDensity);
             int wordPixels = (int) (wordSpacing * getResources().getDisplayMetrics().scaledDensity);
@@ -109,16 +108,18 @@ public class RCTSigntureView extends ImageView implements View.OnTouchListener {
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                touch_start(x, y);
+                touchStart(x, y);
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
-                touch_move(x, y);
+                touchMove(x, y);
                 invalidate();
                 break;
             case MotionEvent.ACTION_UP:
-                touch_up();
+                touchUp();
                 invalidate();
+                break;
+            default:
                 break;
         }
         return true;
@@ -136,7 +137,7 @@ public class RCTSigntureView extends ImageView implements View.OnTouchListener {
 
     }
 
-    private void touch_start(float x, float y) {
+    private void touchStart(float x, float y) {
         undonePaths.clear();
 
         if (mode == ERASER) {
@@ -159,7 +160,7 @@ public class RCTSigntureView extends ImageView implements View.OnTouchListener {
         mY = y;
     }
 
-    private void touch_move(float x, float y) {
+    private void touchMove(float x, float y) {
         //TODO 稍后根据dx和dy计算笔画粗细
 //        float dx = Math.abs(x - mX);
 //        float dy = Math.abs(y - mY);
@@ -168,7 +169,7 @@ public class RCTSigntureView extends ImageView implements View.OnTouchListener {
         mY = y;
     }
 
-    private void touch_up() {
+    private void touchUp() {
         m_Path.lineTo(mX, mY);
         Paint newPaint = new Paint(m_Paint);
 
