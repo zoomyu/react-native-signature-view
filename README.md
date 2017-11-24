@@ -88,7 +88,7 @@ only RN 0.29+ Edit your MainApplication.java (deep in android/app/src/main/java/
 
 ### Usage
 
-To see all available function take a look at [root.js](https://github.com/zoomyu/react-native-signature-view/blob/master/example/src/root.js#L26)
+To see all available function take a look at [App.js](https://github.com/zoomyu/react-native-signature-view/blob/master/example/App.js#L32)
 
 ```js
   <SignatureView
