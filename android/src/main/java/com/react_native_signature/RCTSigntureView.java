@@ -200,7 +200,7 @@ public class RCTSigntureView extends ImageView implements View.OnTouchListener {
 
     public Bitmap getSignature() {
         Bitmap signatureBitmap = Bitmap.createBitmap(this.getWidth(), this.getHeight(),
-                Bitmap.Config.RGB_565);
+                Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(signatureBitmap);
         this.draw(canvas);
         return signatureBitmap;
