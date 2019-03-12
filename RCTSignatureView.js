@@ -78,7 +78,7 @@ class SignatureView extends React.Component {
   _resetSignature() {
     UIManager.dispatchViewManagerCommand(
         findNodeHandle(this),
-        UIManager.RCTSignatureView.Commands.resetSignature,
+        UIManager.getViewManagerConfig('RCTSignatureView').Commands.resetSignature,
         [],
     );
   }
@@ -86,7 +86,7 @@ class SignatureView extends React.Component {
   _saveSignature() {
     UIManager.dispatchViewManagerCommand(
       findNodeHandle(this),
-      UIManager.RCTSignatureView.Commands.saveSignature,
+      UIManager.getViewManagerConfig('RCTSignatureView').Commands.saveSignature,
       [],
     );
   }
